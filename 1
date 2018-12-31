@@ -15,6 +15,8 @@ for f in /etc/runit/core-services/*.sh; do
     [ -r $f ] && . $f
 done
 
+mkdir -m 1777 -p /var/volatile/log/
+
 dmesg >/var/log/dmesg.log
 if [ $(sysctl -n kernel.dmesg_restrict 2>/dev/null) -eq 1 ]; then
 	chmod 0600 /var/log/dmesg.log
