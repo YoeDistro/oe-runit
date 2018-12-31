@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p /var/log/dropbear/
+exec svlogd -tt /var/log/dropbear/
